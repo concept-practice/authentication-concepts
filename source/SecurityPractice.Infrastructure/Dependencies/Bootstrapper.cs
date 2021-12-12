@@ -8,14 +8,13 @@
     using MediatR;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
-    using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using SecurityPractice.Infrastructure.DataAccess.Common;
     using Serilog;
 
     public static class Bootstrapper
     {
-        public static void Register(IServiceCollection services, IConfiguration configuration)
+        public static void Register(this IServiceCollection services)
         {
             services.AddDbContext<ApplicationContext>(x =>
             {

@@ -4,6 +4,7 @@
     using Domain.Customers.AddCustomer;
     using Domain.Customers.IsUsernameAvailable;
     using Infrastructure.Security.SignIn;
+    using Infrastructure.Security.SignOut;
     using MediatR;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Http;
@@ -47,6 +48,12 @@
         public async Task<IActionResult> DoAuthorizedStuff()
         {
             return Ok();
+        }
+
+        [HttpPost("SignOutCustomer", Name = "SignOutCustomer")]
+        public async Task<IActionResult> SignOutCustomer()
+        {
+            return await HandleNoContent(new SignOutCustomerRequest());
         }
     }
 }

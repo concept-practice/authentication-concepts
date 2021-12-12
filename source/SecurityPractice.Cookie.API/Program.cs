@@ -1,9 +1,12 @@
+using SecurityPractice.Infrastructure.Dependencies;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.Register();
 
 var app = builder.Build();
 
