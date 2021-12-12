@@ -1,22 +1,20 @@
-﻿namespace SecurityPractice.Cookie.API.Controllers
+﻿namespace SecurityPractice.Bearer.API.Controllers
 {
-    using System.Threading.Tasks;
+    using MediatR;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using SecurityPractice.Common.Controllers;
     using Domain.Customers.AddCustomer;
     using Domain.Customers.IsUsernameAvailable;
     using Infrastructure.Security.SignIn;
     using Infrastructure.Security.SignOut;
-    using MediatR;
-    using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Http;
-    using Microsoft.AspNetCore.Mvc;
-    using SecurityPractice.Common.Controllers;
 
     [ApiController]
     [Route("[controller]")]
     [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
-    public class AuthenticationController : BaseController
+    public class BearerAuthenticationController : BaseController
     {
-        public AuthenticationController(IMediator mediator)
+        public BearerAuthenticationController(IMediator mediator)
             : base(mediator)
         {
         }
@@ -50,6 +48,13 @@
         public async Task<IActionResult> SignOutCustomer()
         {
             return await HandleNoContent(new SignOutCustomerRequest());
+        }
+
+        [Authorize]
+        [HttpGet("DoAuthStuff", Name = "DoAuthStuff")]
+        public ActionResult<IEnumerable<string>> GetAuthenticated()
+        {
+            return new string[] { "value1", "value2", "moreshit" };
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace SecurityPractice.Infrastructure.Dependencies
+﻿using SecurityPractice.Infrastructure.Tokens;
+
+namespace SecurityPractice.Infrastructure.Dependencies
 {
     using System;
     using System.Collections.Generic;
@@ -25,9 +27,9 @@
                 .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultTokenProviders();
 
-            services
-                .AddAuthentication()
-                .AddCookie();
+            // services
+            //    .AddAuthentication()
+            //    .AddCookie();
 
             var logger = new LoggerConfiguration()
                 .MinimumLevel.Error()
@@ -35,6 +37,8 @@
                 .CreateLogger();
 
             services.AddLogging();
+
+            services.AddSingleton<ITokenService, TokenService>();
 
             services.AddSingleton<ILogger>(_ => logger);
 

@@ -2,7 +2,7 @@
 {
     using MediatR;
 
-    public class SignInCustomerRequest : IRequest
+    public class SignInCustomerRequest : IRequest<string>
     {
         public string Username { get; set; }
 

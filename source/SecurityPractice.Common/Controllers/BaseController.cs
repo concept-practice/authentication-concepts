@@ -9,11 +9,11 @@
 
     public abstract class BaseController : ControllerBase
     {
-        private readonly IMediator _mediator;
+        protected readonly IMediator Mediator;
 
         protected BaseController(IMediator mediator)
         {
-            _mediator = mediator;
+            Mediator = mediator;
         }
 
         protected async Task<IActionResult> HandleOk<TResponse>(IRequest<TResponse> request)
@@ -43,13 +43,13 @@
 
             try
             {
-                var result = await _mediator.Send(request);
+                var result = await Mediator.Send(request);
 
                 response = responseFunc.Invoke(result);
             }
             catch (Exception exception)
             {
-                await _mediator.Publish(new ExceptionOccurred(exception));
+                await Mediator.Publish(new ExceptionOccurred(exception));
 
                 return BadRequest(exception.Message);
             }
