@@ -1,7 +1,7 @@
 ﻿namespace SecurityPractice.Domain.Customers.Common
 {
     using System.Threading.Tasks;
-    using SecurityPractice.Domain.Customers.Models;
+    using Models;
 
     public interface ICustomerRepository
     {

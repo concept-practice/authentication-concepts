@@ -4,13 +4,12 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
+    using Domain.Customers.Models;
     using MediatR;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Logging;
-    using SecurityPractice.Domain.Customers.Models;
     using SecurityPractice.Infrastructure.DataAccess.Common;
     using Serilog;
 
@@ -38,7 +37,7 @@
 
             services.AddLogging();
 
-            services.AddSingleton<Serilog.ILogger>(_ => logger);
+            services.AddSingleton<ILogger>(_ => logger);
 
             services.AddMediatR(Assembly.Load("SecurityPractice.Domain"), Assembly.Load("SecurityPractice.Infrastructure"));
 

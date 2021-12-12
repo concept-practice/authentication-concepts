@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecurityPractice.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecurityPractice.Infrastructure", "source\SecurityPractice.Infrastructure\SecurityPractice.Infrastructure.csproj", "{3E4271EE-C67A-43E4-80BA-CDE70C45BD9A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cookie", "Cookie", "{7CC7AB44-59EE-4322-BF7F-D56A7C0FC292}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bearer", "Bearer", "{ECF1DE74-45BB-48BA-8C91-BD097965A0ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityPractice.Cookie.API", "source\SecurityPractice.Cookie.API\SecurityPractice.Cookie.API.csproj", "{CF2D9C7C-ED3D-45F0-909B-676E2F08E675}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +33,16 @@ Global
 		{3E4271EE-C67A-43E4-80BA-CDE70C45BD9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E4271EE-C67A-43E4-80BA-CDE70C45BD9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E4271EE-C67A-43E4-80BA-CDE70C45BD9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF2D9C7C-ED3D-45F0-909B-676E2F08E675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF2D9C7C-ED3D-45F0-909B-676E2F08E675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF2D9C7C-ED3D-45F0-909B-676E2F08E675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF2D9C7C-ED3D-45F0-909B-676E2F08E675}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF2D9C7C-ED3D-45F0-909B-676E2F08E675} = {7CC7AB44-59EE-4322-BF7F-D56A7C0FC292}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F715F2B0-FCAC-4185-8DBE-8C9458B4136A}

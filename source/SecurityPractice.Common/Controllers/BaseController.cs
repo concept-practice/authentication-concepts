@@ -2,10 +2,10 @@
 {
     using System;
     using System.Threading.Tasks;
+    using ErrorHandling;
     using MediatR;
     using Microsoft.AspNetCore.Mvc;
-    using SecurityPractice.Common.ErrorHandling;
-    using SecurityPractice.Common.Validation;
+    using Validation;
 
     public abstract class BaseController : ControllerBase
     {

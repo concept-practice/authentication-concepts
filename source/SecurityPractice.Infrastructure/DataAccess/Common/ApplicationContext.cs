@@ -1,5 +1,6 @@
 ﻿namespace SecurityPractice.Infrastructure.DataAccess.Common
 {
+    using Customers;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
     using SecurityPractice.Domain.Customers.Models;
@@ -16,7 +17,7 @@
         {
             base.OnModelCreating(builder);
 
-            //builder.BuildCustomer();
+            builder.BuildCustomer();
         }
     }
 }

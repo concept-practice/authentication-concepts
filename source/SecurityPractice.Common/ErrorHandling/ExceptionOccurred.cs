@@ -1,8 +1,7 @@
-﻿using MediatR;
-
-namespace SecurityPractice.Common.ErrorHandling
+﻿namespace SecurityPractice.Common.ErrorHandling
 {
     using System;
+    using MediatR;
 
     public class ExceptionOccurred : INotification
     {

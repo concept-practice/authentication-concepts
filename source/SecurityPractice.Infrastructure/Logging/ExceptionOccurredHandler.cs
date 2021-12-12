@@ -1,11 +1,11 @@
-﻿using MediatR;
-using SecurityPractice.Common.ErrorHandling;
-using Serilog;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace SecurityPractice.Infrastructure.Logging
+﻿namespace SecurityPractice.Infrastructure.Logging
 {
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Common.ErrorHandling;
+    using MediatR;
+    using Serilog;
+
     public class ExceptionOccurredHandler : INotificationHandler<ExceptionOccurred>
     {
         private readonly ILogger _logger;

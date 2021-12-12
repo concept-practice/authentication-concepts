@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Security.Claims;
-
-namespace SecurityPractice.Infrastructure.Security.SignIn
+﻿namespace SecurityPractice.Infrastructure.Security.SignIn
 {
     using System.Threading;
     using System.Threading.Tasks;
+    using Domain.Customers.Models;
     using MediatR;
     using Microsoft.AspNetCore.Identity;
-    using SecurityPractice.Domain.Customers.Models;
 
     public class SignInCustomerRequestHandler : IRequestHandler<SignInCustomerRequest>
     {

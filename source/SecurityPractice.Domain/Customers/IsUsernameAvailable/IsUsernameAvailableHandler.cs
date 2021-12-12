@@ -2,8 +2,8 @@
 {
     using System.Threading;
     using System.Threading.Tasks;
+    using Common;
     using MediatR;
-    using SecurityPractice.Domain.Customers.Common;
 
     public class IsUsernameAvailableHandler : IRequestHandler<IsUsernameAvailableRequest, IsUsernameAvailableResponse>
     {

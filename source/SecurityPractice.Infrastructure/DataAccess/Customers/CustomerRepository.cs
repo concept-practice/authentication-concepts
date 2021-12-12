@@ -1,7 +1,6 @@
-﻿using System.Security.Claims;
-
-namespace SecurityPractice.Infrastructure.DataAccess.Customers
+﻿namespace SecurityPractice.Infrastructure.DataAccess.Customers
 {
+    using System.Security.Claims;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Identity;
     using SecurityPractice.Domain.Customers.Common;
